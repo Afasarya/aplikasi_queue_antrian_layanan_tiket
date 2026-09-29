@@ -2,12 +2,6 @@
 #define pengunjung_H
 #include "boolean.h"
 
-/* Program   : pengunjung.h */
-/* Deskripsi : ADT Pengunjung untuk antrean layanan loket */
-/* NIM/Nama  : 24060125140199/Ilhami Rizqy Romadzoni Astiko*/
-/* Tanggal   : 23 September 2026*/
-/***********************************/
-
 #define MAXNAMA 50 //panjang maksimum nama pengunjung
 
 /* type Pengunjung = < id: integer,       {id pengunjung}

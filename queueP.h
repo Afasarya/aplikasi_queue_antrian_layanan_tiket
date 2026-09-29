@@ -3,13 +3,6 @@
 #include "boolean.h"
 #include "pengunjung.h"
 
-/* Program   : queueP.h */
-/* Deskripsi : ADT Queue representasi kontigu dengan array, 
-               model I: head selalu di posisi 0 atau 1 */
-/* NIM/Nama  : 24060125140199/Ilhami Rizqy Romadzoni Astiko*/
-/* Tanggal   : 23 September 2026*/
-/***********************************/
-
 #define MAXQ 10 //kapasitas queue
 
 /* type QueueP = <  wadah: array [1..10] of Pengunjung ,

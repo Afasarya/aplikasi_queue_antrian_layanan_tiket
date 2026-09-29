@@ -1,9 +1,3 @@
-/* Program   : queueP.c */
-/* Deskripsi : file BODY modul queue */
-/* NIM/Nama  : 24060125140199/Ilhami Rizqy Romadzoni Astiko*/
-/* Tanggal   : 23 September 2026*/
-/***********************************/
-
 #include <stdio.h>
 #include <string.h>
 #include "queueP.h"

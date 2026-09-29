@@ -3,12 +3,6 @@
 #include "boolean.h"
 #include "pengunjung.h"
 
-/* Program   : loket.h */
-/* Deskripsi : ADT Loket untuk melayani antrean pengunjung */
-/* NIM/Nama  : 24060125140199/Ilhami Rizqy Romadzoni Astiko*/
-/* Tanggal   : 23 September 2026*/
-/***********************************/
-
 #define MAXLIST 10 //kapasitas list pengunjung yang sudah dilayani
 
 /* type Loket = < id: integer,                            {id loket}
