@@ -141,9 +141,6 @@ void enqueue2(QueueP *Q1, QueueP *Q2, Pengunjung e){
 {proses: mengurangi elemen wadah antrian terpanjang Q1 atau Q2, semua elemen di belakang head digeser maju }
 {bila awalnya 1 elemen, maka Head dan Tail antrian menjadi 0 } */
 void dequeue2(QueueP *Q1, QueueP *Q2, Pengunjung *e) {
-    // Kamus Lokal
-    int i;
-
     // Algoritma
     if (sizeQueue(*Q1) >= sizeQueue(*Q2)) {
         dequeue(Q1,e);
