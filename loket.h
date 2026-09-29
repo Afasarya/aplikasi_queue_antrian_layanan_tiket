@@ -5,12 +5,12 @@
 
 #define MAXLIST 10 //kapasitas list pengunjung yang sudah dilayani
 
-/* type Loket = < id: integer,                            {id loket}
-                  status: integer,                        {1=melayani, 0=kosong}
-                  jenisLayanan: array [1..2] of character {kode layanan yang ditangani, '-' bila kosong}
-                  pengunjungAktif: Pengunjung             {pengunjung yang sedang dilayani}
-                  listPengunjung: array [1..10] of Pengunjung {pengunjung yang sudah dilayani}
-                  jumlahDilayani: integer                 {banyak elemen terisi pada listPengunjung} >
+/* type Loket = < id: integer,                          {id loket}
+                status: integer,                        {1=melayani, 0=kosong}
+                jenisLayanan: array [1..2] of character {kode layanan yang ditangani, '-' bila kosong}
+                pengunjungAktif: Pengunjung             {pengunjung yang sedang dilayani}
+                listPengunjung: array [1..10] of Pengunjung {pengunjung yang sudah dilayani}
+                jumlahDilayani: integer                 {banyak elemen terisi pada listPengunjung} >
 {jumlahDilayani ditambahkan sebagai modifikasi ADT, untuk mencatat isi listPengunjung} */
 typedef struct {
     int id;
@@ -85,9 +85,7 @@ boolean IsListFull(Loket L);
 
 /*function CanServe(L:Loket, layanan:character) -> boolean
 {mengembalikan true jika layanan termasuk jenisLayanan yang ditangani L} */
-boolean CanServe(Loket L, char layanan){
-    
-}
+boolean CanServe(Loket L, char layanan);
 
 /*** OPERASI SIMULASI ***/
 
@@ -105,7 +103,7 @@ void SelesaiLayani(Loket *L, Pengunjung *P);
 
 /*function CariLoket(daftar:array [1..n] of Loket, n:integer, layanan:character) -> integer
 {mengembalikan indeks loket yang kosong (status=0) dan bisa melayani layanan,
- dengan id terkecil bila ada beberapa. Mengembalikan 0 bila tidak ada loket yang tersedia}
+dengan id terkecil bila ada beberapa. Mengembalikan 0 bila tidak ada loket yang tersedia}
 {asumsi: daftar terurut berdasarkan id loket, indeks 1..n} */
 int CariLoket(Loket daftar[], int n, char layanan);
 
