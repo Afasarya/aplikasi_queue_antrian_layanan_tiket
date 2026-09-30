@@ -27,7 +27,6 @@ Pengunjung PengunjungKosong(){
 
 /*** SELEKTOR ***/
 
-
 /*function GetIdPengunjung(P:Pengunjung) -> integer
 {mengembalikan id pengunjung P} */
 int GetIdPengunjung(Pengunjung P){

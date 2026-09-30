@@ -10,8 +10,8 @@
 #define MAXNAMA 50 //panjang maksimum nama pengunjung
 
 /* type Pengunjung = < id: integer,       {id pengunjung}
-                       nama: string,      {nama pengunjung}
-                       layanan: character {kode layanan: 'A','B','I','P'} >
+                        nama: string,      {nama pengunjung}
+                        layanan: character {kode layanan: 'A','B','I','P'} >
 {cara akses: P:Pengunjung, P.id, P.nama, P.layanan} */
 typedef struct {
     int id;

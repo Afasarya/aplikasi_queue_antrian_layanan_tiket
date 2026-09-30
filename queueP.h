@@ -14,11 +14,15 @@ typedef struct { Pengunjung wadah[MAXQ+1]; //kapasitas 10 elemen, indeks 0 tidak
                   int tail; 
                 } QueueP;
 
+/*** KONSTRUKTOR ***/
+
 /*procedure createQueue ( output Q:QueueP)
 {I.S.: -}
 {F.S.: Q terdefinisi, kosong}
 {Proses: mengisi elemen dengan pengunjung kosong, head=tail=0 }*/ 
 void createQueue(QueueP *Q);
+
+/*** SELEKTOR ***/
 
 /*function Head(Q:QueueP)-> integer 
 {mengembalikan elemen terdepan antrian Q} */
@@ -40,6 +44,8 @@ Pengunjung infoHead(QueueP Q);
 /*pikirkan bila antrian kosong*/
 Pengunjung infoTail(QueueP Q);
 
+/*** PRINT ***/
+
 /*function sizeQueue(Q:QueueP)-> integer 
 {mengembalikan panjang antrian Q} */
 int sizeQueue(QueueP Q);
@@ -56,10 +62,12 @@ void printQueue(QueueP Q);
 {proses: mencetak elemen tak kosong ke layar}*/
 void viewQueue(QueueP Q);
 
+/*** PREDIKAT ***/
+
 /*function isEmptyQueue(Q:QueueP) -> boolean
 {mengembalikan true jika Q kosong}*/
 boolean isEmptyQueue(QueueP Q);
- 
+
 /*function isFullQueue(Q:QueueP) -> boolean
 {mengembalikan true jika Q penuh}*/
 boolean isFullQueue(QueueP Q);
@@ -67,6 +75,8 @@ boolean isFullQueue(QueueP Q);
 /*function isOneElement(Q:QueueP) -> boolean
 {mengembalikan true jika hanya ada 1 elemen }*/
 boolean isOneElement(QueueP Q);
+
+/*** MUTATOR ***/
 
 /*procedure enqueue( input/output Q:QueueP, input e: Pengunjung )
 {I.S.: Q dan e terdefinisi}
@@ -80,20 +90,5 @@ void enqueue(QueueP *Q, Pengunjung e);
 {proses: mengurangi elemen wadah Q, semua elemen di belakang head digeser maju }
 {bila awalnya 1 elemen, maka Head dan Tail menjadi 0 } */
 void dequeue(QueueP *Q, Pengunjung *e);
-
-/*tambahan, dikerjakan bila cukup waktu */
-
-/*procedure enqueue2( input/output Q1:QueueP, input/output Q2:QueueP, input e: Pengunjung )
-{I.S.: e terdefinisi}
-{F.S.: elemen wadah Q1 atau Q2 bertambah 1, bila belum penuh}
-{proses: menambah elemen wadah pada antrian terpendek dari Q1 atau Q2} */
-void enqueue2(QueueP *Q1, QueueP *Q2, Pengunjung e);
-
-/*procedure dequeue2( input/output Q1:QueueP, input/output Q2:QueueP, output e: Pengunjung )
-{I.S.: }
-{F.S.: e=infohead Q1 atau Q2 atau e=pengunjung kosong bila Q1 dan Q2 kosong, elemen wadah Q1 atau Q2 berkurang 1 }
-{proses: mengurangi elemen wadah antrian terpanjang Q1 atau Q2, semua elemen di belakang head digeser maju }
-{bila awalnya 1 elemen, maka Head dan Tail antrian menjadi 0 } */
-void dequeue2(QueueP *Q1, QueueP *Q2, Pengunjung *e);
 
 #endif

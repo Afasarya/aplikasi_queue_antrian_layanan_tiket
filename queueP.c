@@ -3,6 +3,8 @@
 #include "queueP.h"
 #include "boolean.h"
 
+/*** KONSTRUKTOR ***/
+
 /*procedure createQueue ( output Q:QueueP)
 {I.S.: -}
 {F.S.: Q terdefinisi, kosong}
@@ -14,6 +16,8 @@ void createQueue(QueueP *Q){
         Q->wadah[i] = PengunjungKosong();
     }
 }
+
+/*** SELEKTOR ***/
 
 /*function infoHead(Q:QueueP)-> Pengunjung 
 {mengembalikan nilai elemen terdepan antrian Q} */
@@ -34,6 +38,8 @@ Pengunjung infoTail(QueueP Q){
     }
     return PengunjungKosong();
 }
+
+/*** PRINT ***/
 
 /*function sizeQueue(Q:QueueP)-> integer 
 {mengembalikan panjang antrian Q} */
@@ -64,6 +70,8 @@ void viewQueue(QueueP Q){
     }
 }
 
+/*** PREDIKAT ***/
+
 /*function isEmptyQueue(Q:QueueP) -> boolean
 {mengembalikan true jika Q kosong}*/
 boolean isEmptyQueue(QueueP Q){
@@ -82,10 +90,8 @@ boolean isOneElement(QueueP Q){
     return tail(Q) == 1;
 }
 
-/*procedure enqueue( input/output Q:QueueP, input e: Pengunjung )
-{I.S.: Q dan e terdefinisi}
-{F.S.: elemen wadah Q bertambah 1, bila belum penuh}
-{proses: menambah elemen wadah Q } */
+/*** MUTATOR ***/
+
 void enqueue(QueueP *Q, Pengunjung e){
     if (!isFullQueue(*Q)){
         Q->wadah[tail(*Q)+1] = e;
@@ -94,11 +100,6 @@ void enqueue(QueueP *Q, Pengunjung e){
     }
 }
 
-/*procedure deQueue( input/output Q:QueueP, output e: Pengunjung )
-{I.S.: }
-{F.S.: e=infohead(Q) atau e=pengunjung kosong bila Q kosong, elemen wadah Q berkurang 1 }
-{proses: mengurangi elemen wadah Q, semua elemen di belakang head digeser maju }
-{bila awalnya 1 elemen, maka Head dan Tail menjadi 0 } */
 void dequeue(QueueP *Q, Pengunjung *e){
     if(!isEmptyQueue(*Q)) {
         if (isOneElement(*Q)) {
@@ -117,35 +118,4 @@ void dequeue(QueueP *Q, Pengunjung *e){
     } else {
         *e = PengunjungKosong();
     }
-}
-
-/*procedure enqueue2( input/output Q1:QueueP, input/output Q2:QueueP, input e: Pengunjung )
-{I.S.: e terdefinisi}
-{F.S.: elemen wadah Q1 atau Q2 bertambah 1, bila belum penuh}
-{proses: menambah elemen wadah pada antrian terpendek dari Q1 atau Q2} */
-void enqueue2(QueueP *Q1, QueueP *Q2, Pengunjung e){
-    if (sizeQueue(*Q2) >= sizeQueue(*Q1)){
-        if (!isFullQueue(*Q1)){
-            enqueue(Q1,e);
-        }
-    }else{
-        if (!isFullQueue(*Q2)){
-            enqueue(Q2,e);
-        }
-    }
-}
-
-/*procedure dequeue2( input/output Q1:QueueP, input/output Q2:QueueP, output e: Pengunjung )
-{I.S.: }
-{F.S.: e=infohead Q1 atau Q2 atau e=pengunjung kosong bila Q1 dan Q2 kosong, elemen wadah Q1 atau Q2 berkurang 1 }
-{proses: mengurangi elemen wadah antrian terpanjang Q1 atau Q2, semua elemen di belakang head digeser maju }
-{bila awalnya 1 elemen, maka Head dan Tail antrian menjadi 0 } */
-void dequeue2(QueueP *Q1, QueueP *Q2, Pengunjung *e) {
-    // Algoritma
-    if (sizeQueue(*Q1) >= sizeQueue(*Q2)) {
-        dequeue(Q1,e);
-    } else {
-        dequeue(Q2,e);
-    }
-
 }
